@@ -22,6 +22,9 @@
                 } else {
                     echo "<td> - </td>";
                 }
+                if ($i == 100) {
+                    echo "<td> // </td><td> - </td><td> // </td><td> - </td><td> Suma: $suma </td>";
+                }
             }
         ?>
     </table>
