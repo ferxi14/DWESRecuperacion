@@ -16,8 +16,52 @@ function tirarDados($numDados) {
     return $resultados;
 }
 
-function calcularPuntos() {
-    
+function calcularPuntos($dados) {
+    $puntos = array_sum($dados);
+    $iguales = true;
+
+    foreach ($dados as $dado) {
+        if ($dado != $dados[0]) {
+            $todosIguales = false;
+            break;
+        }
+    }
+
+    if (count($dados) > 1 && $todosIguales) {
+        $puntos = 100;
+    }
+    return $puntos;
 }
 
+function generarTabla($jugadores) {
+    print "Resultado";
+    print "<table border='1' style='text-align: center;'>";
+
+    foreach ($jugadores as $nombre => $dados) {
+        echo "<tr>";
+        echo "<td>" . $nombre . "</td>";
+
+        foreach ($dados as $dado){
+            echo "<td> <img src='images/' . $dado . '.png' width='50' height='50'> </td>";
+        }
+
+        echo "</tr>";
+    }
+    print "</table>";
+}
+
+function resultados($puntuaciones, $ganadores) {
+    print "<br>";
+    
+    foreach ($puntuaciones as $nombre => $puntos) {
+        echo "Nombre: " . $nombre . " Puntos: " . $puntos . "<br>";
+    }
+
+    print "<h3>Ganadores</h3>";
+    foreach ($ganadores as $nombre) {
+        echo "Ganador: " . $nombre . "<br>";
+    }
+
+    echo "Numero de ganadores: " . count($ganadores) . "<br>";
+}
 ?>

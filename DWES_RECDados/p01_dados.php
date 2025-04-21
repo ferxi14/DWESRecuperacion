@@ -50,6 +50,10 @@
         $ganadores = array_keys($puntos, $maxPuntos);
         $numGanadores = count($ganadores);
 
+        generarTabla($jugadores);
+
+        resultados($puntos, $ganadores);
+
       } catch (Exception $e) {
         $error = $e->getMessage();
       }
