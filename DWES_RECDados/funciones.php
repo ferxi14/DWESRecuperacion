@@ -42,7 +42,7 @@ function generarTabla($jugadores) {
         echo "<td>" . $nombre . "</td>";
 
         foreach ($dados as $dado){
-            echo "<td> <img src='./images/' . $dado . '.PNG' width='50' height='50'> </td>";
+            echo "<td> <img src='./images/" . $dado . ".PNG' width='50' height='50'> </td>";
         }
 
         echo "</tr>";
