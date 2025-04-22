@@ -22,12 +22,12 @@ function calcularPuntos($dados) {
 
     foreach ($dados as $dado) {
         if ($dado != $dados[0]) {
-            $todosIguales = false;
+            $iguales = false;
             break;
         }
     }
 
-    if (count($dados) > 1 && $todosIguales) {
+    if (count($dados) > 1 && $iguales) {
         $puntos = 100;
     }
     return $puntos;
@@ -42,7 +42,7 @@ function generarTabla($jugadores) {
         echo "<td>" . $nombre . "</td>";
 
         foreach ($dados as $dado){
-            echo "<td> <img src='images/' . $dado . '.png' width='50' height='50'> </td>";
+            echo "<td> <img src='./images/' . $dado . '.PNG' width='50' height='50'> </td>";
         }
 
         echo "</tr>";
